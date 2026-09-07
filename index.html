@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shalemu Church Chepur</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #20384f;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            box-shadow: 0 3px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: #173d63;
+        }
+
+        .logo span {
+            display: block;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 5px;
+            margin-top: 2px;
+            color: #6f91ad;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #20384f;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #6b99c2;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            padding: 80px 7%;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.68),
+                    rgba(255,255,255,0.82)
+                ),
+                url("https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1900&q=85")
+                center center / cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .small-title {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #6487a4;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 68px;
+            line-height: 1.05;
+            color: #173d63;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #6d94b5;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            max-width: 650px;
+            margin-bottom: 25px;
+            color: #304b63;
+        }
+
+        .verse {
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: italic;
+            font-size: 18px;
+            color: #4f687d;
+            margin-bottom: 32px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button-primary {
+            background: #173f66;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #28577f;
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            background: white;
+            color: #173f66;
+            border: 1px solid #173f66;
+        }
+
+        .button-secondary:hover {
+            background: #edf4fa;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           FEATURE STRIP
+        ========================= */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: #f3f7fb;
+            padding: 38px 7%;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .feature {
+            padding: 18px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #173d63;
+            margin-bottom: 6px;
+            font-size: 21px;
+        }
+
+        .feature p {
+            color: #617487;
+            font-size: 15px;
+        }
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        .section {
+            padding: 95px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-heading small {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #6d91ad;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 46px;
+            line-height: 1.15;
+            color: #173d63;
+            margin: 12px 0 15px;
+        }
+
+        .section-heading p {
+            color: #66798a;
+            font-size: 17px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+            border-radius: 18px;
+            box-shadow: 0 14px 40px rgba(30, 60, 90, 0.12);
+        }
+
+        .about-text small {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #6d91ad;
+            font-weight: bold;
+        }
+
+        .about-text h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 46px;
+            line-height: 1.15;
+            color: #173d63;
+            margin: 12px 0 20px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: #566d80;
+            margin-bottom: 18px;
+        }
+
+        /* =========================
+           HISTORY
+        ========================= */
+
+        .history {
+            background: #f5f8fb;
+        }
+
+        .history-content {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .history-card {
+            background: white;
+            padding: 45px;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(30, 60, 90, 0.08);
+        }
+
+        .history-card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #173d63;
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .history-card p {
+            color: #5d7081;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        .timeline {
+            margin-top: 35px;
+            border-left: 3px solid #b6cde0;
+            padding-left: 28px;
+        }
+
+        .timeline-item {
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #557f9f;
+            border-radius: 50%;
+            position: absolute;
+            left: -36px;
+            top: 8px;
+        }
+
+        .timeline-item h4 {
+            color: #173d63;
+            margin-bottom: 5px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+        }
+
+        .timeline-item p {
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            background: #ffffff;
+        }
+
+        .service-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            background: #f6f9fc;
+            padding: 35px 28px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #e7eef4;
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(30, 60, 90, 0.08);
+        }
+
+        .service-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .service h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            color: #173d63;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            color: #627588;
+        }
+
+        /* =========================
+           EVENTS
+        ========================= */
+
+        .events {
+            background: #f5f8fb;
+        }
+
+        .event-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .event {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 7px 25px rgba(30, 60, 90, 0.06);
+        }
+
+        .event-top {
+            background: #173f66;
+            color: white;
+            padding: 20px;
+        }
+
+        .event-top h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 23px;
+        }
+
+        .event-content {
+            padding: 24px;
+        }
+
+        .event-content p {
+            color: #627588;
+        }
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        /* =========================
+           QUOTE
+        ========================= */
+
+        .quote-section {
+            background: #173f66;
+            color: white;
+            padding: 90px 10%;
+            text-align: center;
+        }
+
+        .quote-section p {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 32px;
+            font-style: italic;
+            max-width: 950px;
+            margin: auto;
+            line-height: 1.5;
+        }
+
+        .quote-section span {
+            display: block;
+            margin-top: 22px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            opacity: 0.85;
+        }
+
+        /* =========================
+           LOCATION
+        ========================= */
+
+        .location {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .location-text h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #173d63;
+            font-size: 46px;
+            margin-bottom: 15px;
+        }
+
+        .location-text p {
+            color: #627588;
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+
+        .map-button {
+            margin-top: 15px;
+        }
+
+        .map-box {
+            min-height: 330px;
+            border-radius: 18px;
+            background:
+                linear-gradient(
+                    rgba(23,63,102,0.78),
+                    rgba(23,63,102,0.78)
+                ),
+                url("https://images.unsplash.com/photo-1524666041070-9e7b61d3b6e0?auto=format&fit=crop&w=1000&q=80")
+                center / cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .map-box h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #f5f8fb;
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            color: #5d7183;
+            margin: 12px;
+        }
+
+        .contact-info a {
+            color: #205982;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #102b45;
+            color: white;
+            text-align: center;
+            padding: 28px 20px;
+        }
+
+        footer .footer-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            margin-bottom: 6px;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            header {
+                padding: 16px 5%;
+            }
+
+            nav a {
+                margin-left: 15px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about,
+            .location {
+                grid-template-columns: 1fr;
+            }
+
+            .service-boxes,
+            .event-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 13px;
+                margin: 5px 8px;
+            }
+
+            .hero {
+                min-height: 620px;
+                padding: 55px 7%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 70px 7%;
+            }
+
+            .section-heading h2,
+            .about-text h2,
+            .location-text h2 {
+                font-size: 35px;
+            }
+
+            .history-card {
+                padding: 28px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid img {
+                height: 240px;
+            }
+
+            .quote-section p {
+                font-size: 24px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="logo">
+            ✝ Shalemu Church
+            <span>CHEPUR</span>
+        </div>
+
+        <nav>
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#history">History</a>
+            <a href="#services">Services</a>
+            <a href="#events">Events</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                A Place to Belong
+            </div>
+
+            <h1>
+                Shalemu Church
+                <span>Chepur</span>
+            </h1>
+
+            <p class="hero-description">
+                Worship God. Grow in Faith. Serve the Community.
+            </p>
+
+            <div class="verse">
+
+                “For where two or three gather in my name,
+                there am I with them.”
+
+                <br>
+
+                — Matthew 18:20
+
+            </div>
+
+            <div class="buttons">
+
+                <a href="#services" class="button button-primary">
+                    Join Us
+                </a>
+
+                <a href="#about" class="button button-secondary">
+                    Discover Our Church
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================= -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">♡</div>
+
+            <h3>Worship Together</h3>
+
+            <p>
+                Come together in faith and worship.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">✦</div>
+
+            <h3>Grow in Faith</h3>
+
+            <p>
+                Learn, pray and grow together.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">🤝</div>
+
+            <h3>Serve</h3>
+
+            <p>
+                Share God's love through service.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">♥</div>
+
+            <h3>All Are Welcome</h3>
+
+            <p>
+                A place for fellowship and community.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="section" id="about">
+
+        <div class="about">
+
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1100&q=85"
+                    alt="Bible"
+                >
+
+            </div>
+
+
+            <div class="about-text">
+
+                <small>Welcome To</small>
+
+                <h2>
+                    Shalemu Church Chepur
+                </h2>
+
+                <p>
+                    Welcome to Shalemu Church Chepur.
+                    We are a community committed to worship,
+                    prayer, fellowship, faith and service.
+                </p>
+
+                <p>
+                    Our church seeks to provide a place where
+                    people can come together, strengthen their
+                    faith and experience God's love.
+                </p>
+
+                <a href="#contact" class="button button-primary">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHURCH HISTORY
+    ========================= -->
+
+    <section class="section history" id="history">
+
+        <div class="section-heading">
+
+            <small>Our Story</small>
+
+            <h2>
+                Church History
+            </h2>
+
+            <p>
+                The story of Shalemu Church Chepur is a story
+                of faith, prayer, people and God's guidance.
+            </p>
+
+        </div>
+
+
+        <div class="history-content">
+
+            <div class="history-card">
+
+                <h3>
+                    The Journey of Shalemu Church
+                </h3>
+
+                <p>
+                    Shalemu Church Chepur has been a place
+                    where people have gathered to worship God,
+                    pray together and grow in faith.
+                </p>
+
+                <p>
+                    The history of the church can be shared here
+                    with important moments, people, events and
+                    milestones that shaped the church community.
+                </p>
+
+                <p>
+                    This section can be updated with the actual
+                    history of the church, including its beginning,
+                    founders, pastors, important members,
+                    church development and memorable events.
+                </p>
+
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <h4>Beginning</h4>
+
+                        <p>
+                            Add the year and story of how the
+                            church was started.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <h4>Growth</h4>
+
+                        <p>
+                            Add important milestones and how
+                            the church community grew.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <h4>Today</h4>
+
+                        <p>
+                            Add the story of the church as it
+                            continues its ministry today.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <section class="section services" id="services">
+
+        <div class="section-heading">
+
+            <small>Join Us</small>
+
+            <h2>
+                Our Services
+            </h2>
+
+            <p>
+                Everyone is welcome to join us in worship,
+                prayer and fellowship.
+            </p>
+
+        </div>
+
+
+        <div class="service-boxes">
+
+
+            <div class="service">
+
+                <div class="service-icon">✝</div>
+
+                <h3>
+                    Sunday Worship
+                </h3>
+
+                <p>
+                    10am-1pm
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">🙏</div>
+
+                <h3>
+                    Prayer Meeting
+                </h3>
+
+                <p>
+                    10am-1pm
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">📖</div>
+
+                <h3>
+                   10am-1pm
+                </h3>
+
+                <p>
+                    Add your Bible study timing here.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EVENTS
+    ========================= -->
+
+    <section class="section events" id="events">
+
+        <div class="section-heading">
+
+            <small>Church Life</small>
+
+            <h2>
+                Upcoming Events
+            </h2>
+
+            <p>
+                Add your church programs, celebrations
+                and special events here.
+            </p>
+
+        </div>
+
+
+        <div class="event-boxes">
+
+
+            <div class="event">
+
+                <div class="event-top">
+
+                    <h3>
+                        Sunday Service
+                    </h3>
+
+                </div>
+
+                <div class="event-content">
+
+                    <p>
+                        Add date, time and details of your
+                        regular Sunday service.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="event">
+
+                <div class="event-top">
+
+                    <h3>
+                        Church Celebration
+                    </h3>
+
+                </div>
+
+                <div class="event-content">
+
+                    <p>
+                        Add details about annual celebrations,
+                        festivals or church programs.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="event">
+
+                <div class="event-top">
+
+                    <h3>
+                        Special Meeting
+                    </h3>
+
+                </div>
+
+                <div class="event-content">
+
+                    <p>
+                        Add details about special meetings,
+                        prayer programs or community events.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================= -->
+
+    <section class="section" id="gallery">
+
+        <div class="section-heading">
+
+            <small>Memories</small>
+
+            <h2>
+                Church Gallery
+            </h2>
+
+            <p>
+                Replace these sample images with your
+                actual church photographs.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <img
+                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=900&q=85"
+                alt="Church Gallery"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=900&q=85"
+                alt="Church Gallery"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=900&q=85"
+                alt="Church Gallery"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=900&q=85"
+                alt="Church Gallery"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1545987796-200677ee1011?auto=format&fit=crop&w=900&q=85"
+                alt="Church Gallery"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=900&q=85"
+                alt="Church Gallery"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIBLE VERSE
+    ========================= -->
+
+    <section class="quote-section">
+
+        <p>
+            “Let your light shine before others,
+            that they may see your good deeds
+            and glorify your Father in heaven.”
+        </p>
+
+        <span>
+            — Matthew 5:16
+        </span>
+
+    </section>
+
+
+    <!-- =========================
+         LOCATION
+    ========================= -->
+
+    <section class="section" id="location">
+
+        <div class="location">
+
+            <div class="location-text">
+
+                <div class="small-title">
+                    Find Us
+                </div>
+
+                <h2>
+                    Visit Shalemu Church
+                </h2>
+
+                <p>
+                    📍 Chepur
+                </p>
+
+                <p>
+                    We welcome you to join us for worship,
+                    prayer and fellowship.
+                </p>
+
+                <div class="map-button">
+
+                    <a
+                        href="https://maps.app.goo.gl/95wskn44Ganx1cGp6"
+                        target="_blank"
+                        class="button button-primary"
+                    >
+                        Open in Google Maps
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="map-box">
+
+                <div>
+
+                    <div style="font-size:45px;">
+                        📍
+                    </div>
+
+                    <h3>
+                        Shalemu Church
+                    </h3>
+
+                    <p>
+                        Chepur
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="section contact" id="contact">
+
+        <div class="section-heading">
+
+            <small>Get In Touch</small>
+
+            <h2>
+                Contact Us
+            </h2>
+
+            <p>
+                We would be happy to hear from you.
+            </p>
+
+        </div>
+
+
+        <div class="contact-info">
+
+            <p>
+                📍
+                <a
+                    href="https://maps.app.goo.gl/95wskn44Ganx1cGp6"
+                    target="_blank"
+                >
+                    Chepur
+                </a>
+            </p>
+
+            <p>
+                📞
+                <a href="tel:+919652782824">
+                    +91 9652782824
+                </a>
+            </p>
+
+            <p>
+                ✉
+                <a href="mailto:amull.bobbili@gmail.com">
+                    amull.bobbili@gmail.com
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-title">
+            ✝ Shalemu Church Chepur
+        </div>
+
+        <p>
+            Faith • Hope • Love
+        </p>
+
+        <p style="margin-top:8px;">
+            © 2026 Shalemu Church Chepur
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
